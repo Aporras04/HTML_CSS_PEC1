@@ -8,9 +8,19 @@ body {
   display: flex;
 }
 
-header {
+header, footer {
   color: #fff;
   background-color: #000;
+}
+
+footer {
+  width: 100%;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  bottom: 0;
 }
 
 .secondary-menu {
@@ -49,13 +59,16 @@ h1 {
 }
 
 .div-container {
-  height: 350px;
   justify-content: center;
   display: flex;
+  flex-wrap: wrap !important;
 }
 
 .div-img {
   width: 20%;
+  min-width: 270px;
+  height: 350px;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
   background-position-x: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -88,6 +101,7 @@ h1 {
 
 .wd-20 {
   width: 20%;
+  min-width: 300px;
 }
 
 .wd-25 {
@@ -142,6 +156,54 @@ h1 {
   .div-img {
     width: 100% !important;
   }
+}
+
+@media (width < 540px) {
+  .ec-title {
+    display: none !important;
+  }
+}
+
+@media (width < 625px) {
+  .first-menu {
+    display: none !important;
+  }
+
+  #second-menu {
+    display: flex !important;
+  }
+}
+
+@media (width < 400px) {
+  .enlace-img {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#img-svg {
+  animation-name: bounceIn;
+  animation-duration: 2s;
+}
+
+.more:hover {
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=index.2cdaf7bc.css.map */
